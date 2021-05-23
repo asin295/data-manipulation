@@ -18,7 +18,16 @@ p4 <- ggplot(data = nycbikes18,aes(x = birth_year, y = tripduration)) + geom_poi
  
 p5 <- ggplot(data = nycbikes18,aes(x = start_station_longitude, y = start_station_latitude)) + geom_point(aes(end_station_longitude,end_station_latitude))
 
-p6 <- ggplot(data = nycbikes18,aes(x = start_station_longitude, 
-                                   y = start_station_latitude,
-                                   xend=end_station_longitude)) + 
-  geom_segment(aes(x=start_station_longitude,y=start_station_latitude,xend=end_station_longitude,yend=end_station_latitude),arrow = arrow(length = unit(0.01, "npc")),alpha=0.3)
+p6 <- ggplot(data = nycbikes18,aes(
+        x = start_station_longitude, 
+        y = start_station_latitude,
+        xend=end_station_longitude
+    )) + geom_segment(aes(
+        x = start_station_longitude,
+        y = start_station_latitude,
+        xend = end_station_longitude,
+        yend = end_station_latitude
+    ),
+    arrow = arrow(length = unit(0.01, "npc")),
+    alpha=0.3
+)
